@@ -105,7 +105,7 @@ joblib.dump(pipeline, model)
 # Upload the model to GCS
 bucket = storage.Client().bucket(BUCKET_ID)
 blob = bucket.blob('{}/{}'.format(
-    datetime.datetime.now().strftime('kmeans_%Y%m%d_%H%M%S'),
+    datetime.datetime.now().strftime('trainkmeans_%Y%m%d_%H%M%S'),
     model))
 blob.upload_from_filename(model)
 # [END export-to-gcs]
